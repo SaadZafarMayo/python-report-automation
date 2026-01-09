@@ -324,6 +324,8 @@ Contributions are welcome! Feel free to:
 - 📊 **Smart Chart Recommendations** — AI-powered visualization suggestions
 - 📱 **Dashboard Generation** — Interactive web dashboards
 - 🔄 **Real-time Data Sync** — Live data updates from APIs
+- 📈 **Tableau Integration** — Pull data directly from Tableau Server/Cloud
+- 📊 **Power BI Integration** — Connect to Power BI datasets and reports
 
 ---
 
