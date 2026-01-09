@@ -7,6 +7,8 @@ A powerful Python automation tool that transforms **any data source** into profe
 
 ![Report Generation Flow](https://img.shields.io/badge/Data-→_Charts_→_Reports_→_Email-orange)
 
+**Tech Stack:** `Python` `Pandas` `Matplotlib` `python-pptx` `ReportLab` `MySQL` `PostgreSQL` `REST APIs` `Google Sheets` `YAML` `Schedule`
+
 ---
 
 ## ✨ Features
