@@ -1,0 +1,153 @@
+# =============================================================================
+# AUTO REPORT GENERATOR - CONFIGURATION FILE
+# =============================================================================
+# This file controls all settings for report generation.
+# Customize values based on your data source and requirements.
+# Use "auto" to let the system detect appropriate values automatically.
+# =============================================================================
+
+
+# =============================================================================
+# DATA SOURCE SETTINGS
+# =============================================================================
+# Supported sources: CSV, Excel, JSON, MySQL, PostgreSQL, SQLite, REST API, Google Sheets
+#
+# Examples:
+#   CSV/Excel/JSON:  "sample_data/sales_data.csv"
+#   MySQL:           "mysql+pymysql://user:password@localhost:3306/database"
+#   PostgreSQL:      "postgresql://user:password@localhost:5432/database"
+#   SQLite:          "sqlite:///path/to/database.db"
+#   REST API:        "https://api.example.com/data"
+#   Google Sheets:   "your-sheet-id-here"
+
+data:
+  # Path to your data file, database connection string, or API URL
+  default_file: "sample_data/layoffs.CSV"
+  
+  # Source type: "auto", "csv", "excel", "json", "sql", "api", "google_sheets"
+  # Leave commented for auto-detection based on file extension
+  # source_type: "auto"
+  
+  # For SQL databases - specify table name or custom query
+  # table: "sales_table"
+  # query: "SELECT * FROM sales WHERE year = 2024"
+  
+  # For Google Sheets - path to credentials file
+  # credentials_file: "credentials.json"
+
+
+# =============================================================================
+# REPORT SETTINGS
+# =============================================================================
+# Customize the report title, author, and company name that appear in outputs
+
+report:
+  title: "layoffs Report"           # Main title on reports
+  author: "Data Analytics Team"     # Author name in footer
+  company: "your company name"      # Company name (optional)
+
+
+# =============================================================================
+# CHART CONFIGURATION
+# =============================================================================
+# Each chart can be customized independently.
+# Use "auto" to let the system choose appropriate columns from your data.
+# Or specify exact column names from your data source.
+#
+# Aggregation options: "sum", "mean", "count", "max", "min"
+# - sum:   Total of all values (good for revenue, sales, quantities)
+# - mean:  Average value (good for ratings, percentages)
+# - count: Number of records (good for frequency distribution)
+# - max:   Maximum value
+# - min:   Minimum value
+
+charts:
+
+  # ---------------------------------------------------------------------------
+  # BAR CHART - Best for comparing values across categories
+  # ---------------------------------------------------------------------------
+  bar_chart:
+    enabled: true                    # Set to false to disable this chart
+    category_column: "auto"          # X-axis: Column for categories (e.g., "company", "region", "month")
+    value_column: "auto"             # Y-axis: Column for values (e.g., "revenue", "total_laid_off")
+    aggregation: "sum"               # How to aggregate: sum, mean, count, max, min
+    title: "auto"                    # Chart title (or set custom: "Sales by Region")
+    top_n: 15                        # Show top N categories (0 = show all)
+
+  # ---------------------------------------------------------------------------
+  # LINE CHART - Best for showing trends over time or sequence
+  # ---------------------------------------------------------------------------
+  line_chart:
+    enabled: true                    # Set to false to disable this chart
+    x_column: "auto"                 # X-axis: Usually time/date column (e.g., "month", "date")
+    y_columns: "auto"                # Y-axis: One or more numeric columns (e.g., "revenue, expenses, profit")
+    title: "auto"                    # Chart title (or set custom: "Monthly Trends")
+
+  # ---------------------------------------------------------------------------
+  # PIE CHART - Best for showing distribution/proportions (use 3-10 categories)
+  # ---------------------------------------------------------------------------
+  pie_chart:
+    enabled: true                    # Set to false to disable this chart
+    category_column: "auto"          # Slice labels (e.g., "region", "industry", "status")
+    value_column: "auto"             # Slice sizes (e.g., "revenue", "count")
+    aggregation: "sum"               # How to aggregate: sum, mean, count
+    title: "auto"                    # Chart title (or set custom: "Revenue Distribution")
+    top_n: 10                        # Show top N categories (others grouped as "Other")
+
+
+# =============================================================================
+# EMAIL SETTINGS
+# =============================================================================
+# Configure email delivery for automated report sending.
+# For Gmail: Use App Password (not regular password)
+#   1. Enable 2FA on your Google account
+#   2. Generate App Password: https://myaccount.google.com/apppasswords
+#
+# SMTP servers:
+#   Gmail:    smtp.gmail.com (port 587)
+#   Outlook:  smtp.office365.com (port 587)
+#   Yahoo:    smtp.mail.yahoo.com (port 587)
+
+email:
+  enabled: false                     # Set to true to enable email sending
+  provider: "gmail"                  # gmail, outlook, yahoo
+  smtp_server: "smtp.gmail.com"      # SMTP server address
+  smtp_port: 587                     # SMTP port (usually 587 for TLS)
+  sender_email: "your-email@gmail.com"         # Your email address
+  sender_password: "your-app-password"         # App password (NOT regular password)
+  recipients:                        # List of email recipients
+    - "recipient@example.com"
+    # - "another@example.com"
+
+
+# =============================================================================
+# SCHEDULE SETTINGS
+# =============================================================================
+# Automate report generation on a schedule.
+# Run with: python run_scheduled.py
+#
+# Frequency options:
+#   - "daily":    Run every day at specified time
+#   - "weekly":   Run on specified day at specified time
+#   - "interval": Run every N minutes
+
+schedule:
+  enabled: true                      # Set to false to disable scheduling
+  frequency: "weekly"                # daily, weekly, or interval
+  time: "09:00"                      # Time in 24-hour format (HH:MM)
+  day: "monday"                      # Day of week (for weekly only)
+  interval_minutes: 60               # Minutes between runs (for interval only)
+
+
+# =============================================================================
+# OUTPUT SETTINGS
+# =============================================================================
+# Configure output formats and directories.
+
+output:
+  formats:                           # Which formats to generate
+    - "pptx"                         # PowerPoint presentation
+    - "pdf"                          # PDF document
+  charts_dir: "output/charts"        # Directory for chart images
+  presentations_dir: "output/presentations"  # Directory for PowerPoint files
+  pdf_dir: "output/pdf"              # Directory for PDF files

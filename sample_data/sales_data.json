@@ -1,0 +1,16 @@
+{
+  "data": [
+    {"month": "January", "revenue": 45000, "expenses": 32000, "profit": 13000, "region": "North", "units_sold": 150},
+    {"month": "February", "revenue": 52000, "expenses": 35000, "profit": 17000, "region": "North", "units_sold": 175},
+    {"month": "March", "revenue": 48000, "expenses": 31000, "profit": 17000, "region": "South", "units_sold": 160},
+    {"month": "April", "revenue": 61000, "expenses": 38000, "profit": 23000, "region": "South", "units_sold": 200},
+    {"month": "May", "revenue": 58000, "expenses": 36000, "profit": 22000, "region": "East", "units_sold": 190},
+    {"month": "June", "revenue": 67000, "expenses": 41000, "profit": 26000, "region": "East", "units_sold": 220},
+    {"month": "July", "revenue": 72000, "expenses": 44000, "profit": 28000, "region": "West", "units_sold": 240},
+    {"month": "August", "revenue": 69000, "expenses": 42000, "profit": 27000, "region": "West", "units_sold": 230},
+    {"month": "September", "revenue": 75000, "expenses": 45000, "profit": 30000, "region": "North", "units_sold": 250},
+    {"month": "October", "revenue": 81000, "expenses": 48000, "profit": 33000, "region": "South", "units_sold": 270},
+    {"month": "November", "revenue": 88000, "expenses": 52000, "profit": 36000, "region": "East", "units_sold": 295},
+    {"month": "December", "revenue": 95000, "expenses": 55000, "profit": 40000, "region": "West", "units_sold": 320}
+  ]
+}
