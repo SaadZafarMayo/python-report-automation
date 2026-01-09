@@ -21,6 +21,26 @@ A powerful Python automation tool that transforms **any data source** into profe
 
 ---
 
+## 📸 Sample Outputs
+
+### Generated PowerPoint Slides
+
+<p align="center">
+  <img src="output/Screenshots/Screenshot 2026-01-09 at 18.36.17.png" width="45%" />
+  <img src="output/Screenshots/Screenshot 2026-01-09 at 18.36.27.png" width="45%" />
+</p>
+
+<p align="center">
+  <img src="output/Screenshots/Screenshot 2026-01-09 at 18.36.36.png" width="45%" />
+  <img src="output/Screenshots/Screenshot 2026-01-09 at 18.37.13.png" width="45%" />
+</p>
+
+### Generated Reports
+- **PowerPoint**: Professional slides with title, summary, and chart slides
+- **PDF**: Executive summary with embedded visualizations
+
+---
+
 ## 🚀 Quick Start
 
 ```bash
@@ -160,6 +180,46 @@ schedule:
 
 ---
 
+## � Security Best Practices
+
+> ⚠️ **Never commit sensitive credentials to GitHub!**
+
+### Using Environment Variables (Recommended)
+
+Instead of hardcoding passwords in `config.yaml`, use environment variables:
+
+```bash
+# Set environment variables
+export EMAIL_PASSWORD="your-app-password"
+export DB_PASSWORD="your-db-password"
+```
+
+Then reference them in your code or use a `.env` file with `python-dotenv`:
+
+```bash
+pip install python-dotenv
+```
+
+```python
+# In your code
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+password = os.getenv("EMAIL_PASSWORD")
+```
+
+### Add to .gitignore
+
+```
+# Never commit these
+.env
+credentials.json
+config_local.yaml
+```
+
+---
+
 ## 📖 Usage Examples
 
 ### Basic Usage
@@ -174,7 +234,9 @@ outputs = generate_report()
 outputs = generate_report(send_email=True)
 ```
 
-### Loading from Different Sources
+### Advanced Usage
+
+#### Loading from Different Data Sources
 
 ```python
 from src.data_loader import load_data
@@ -212,7 +274,7 @@ df = load_data(
 )
 ```
 
-### Scheduled Reports
+#### Scheduled Reports
 
 ```bash
 # Configure schedule in config.yaml, then run:
