@@ -1,7 +1,7 @@
 # 📊 Python Report Automation
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+
 
 A powerful Python automation tool that transforms **any data source** into professional PowerPoint presentations and PDF reports with auto-generated visualizations.
 
