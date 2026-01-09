@@ -1,7 +1,6 @@
-# 📊 Auto Report Generator
+# 📊 Python Report Automation
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
-(LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 A powerful Python automation tool that transforms **any data source** into professional PowerPoint presentations and PDF reports with auto-generated visualizations.
@@ -26,8 +25,8 @@ A powerful Python automation tool that transforms **any data source** into profe
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/auto-report-generator.git
-cd auto-report-generator
+git clone https://github.com/SaadZafarMayo/python-report-automation.git
+cd python-report-automation
 
 # Install dependencies
 pip install -r requirements.txt
@@ -178,7 +177,7 @@ outputs = generate_report(send_email=True)
 ### Loading from Different Sources
 
 ```python
-from data_loader import load_data
+from src.data_loader import load_data
 
 # CSV / Excel / JSON (auto-detected)
 df = load_data("data.csv")
@@ -223,7 +222,7 @@ python run_scheduled.py
 Or programmatically:
 
 ```python
-from scheduler import schedule_weekly, run_scheduler
+from src.scheduler import schedule_weekly, run_scheduler
 from main import generate_report
 
 schedule_weekly(generate_report, day="monday", time_str="09:00")
@@ -318,9 +317,13 @@ Contributions are welcome! Feel free to:
 
 ---
 
-## 📄 License
+## 🚀 Future Improvements
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- 🤖 **AI Integration (Gemini)** — Auto-generate insights and executive summaries
+- 💬 **Natural Language Queries** — Ask questions about your data in plain English
+- 📊 **Smart Chart Recommendations** — AI-powered visualization suggestions
+- 📱 **Dashboard Generation** — Interactive web dashboards
+- 🔄 **Real-time Data Sync** — Live data updates from APIs
 
 ---
 
