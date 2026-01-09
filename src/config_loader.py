@@ -34,8 +34,8 @@ from pathlib import Path
 # Configuration
 # =============================================================================
 
-# Path to the configuration file (same directory as this module)
-CONFIG_FILE = Path(__file__).parent / "config.yaml"
+# Path to the configuration file (project root directory)
+CONFIG_FILE = Path(__file__).parent.parent / "config.yaml"
 
 
 def load_config() -> dict:

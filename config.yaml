@@ -22,7 +22,7 @@
 
 data:
   # Path to your data file, database connection string, or API URL
-  default_file: "sample_data/layoffs.CSV"
+  default_file: "sample_data/sales_data.json"
   
   # Source type: "auto", "csv", "excel", "json", "sql", "api", "google_sheets"
   # Leave commented for auto-detection based on file extension
@@ -42,7 +42,7 @@ data:
 # Customize the report title, author, and company name that appear in outputs
 
 report:
-  title: "layoffs Report"           # Main title on reports
+  title: "Sales Report"           # Main title on reports
   author: "Data Analytics Team"     # Author name in footer
   company: "your company name"      # Company name (optional)
 

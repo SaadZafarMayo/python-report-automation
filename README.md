@@ -1,7 +1,7 @@
 # 📊 Auto Report Generator
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+(LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 A powerful Python automation tool that transforms **any data source** into professional PowerPoint presentations and PDF reports with auto-generated visualizations.
@@ -41,30 +41,31 @@ python main.py
 ## 📁 Project Structure
 
 ```
-auto_report_generator/
+python-report-automation/
 │
-├── main.py                 # Entry point & orchestration
-├── run_scheduled.py        # Scheduled report runner
+├── main.py                 # Entry point - run this to generate reports
+├── run_scheduled.py        # Run this for scheduled automation
 ├── config.yaml             # Configuration file (customize here!)
+├── requirements.txt        # Python dependencies
+├── README.md
 │
-├── data_loader.py          # Multi-source data loading
-├── visualizer.py           # Chart generation (matplotlib)
-├── ppt_generator.py        # PowerPoint creation
-├── pdf_exporter.py         # PDF report generation
-├── email_sender.py         # Email delivery
-├── scheduler.py            # Scheduling utilities
-├── config_loader.py        # Configuration management
+├── src/                    # Source code modules
+│   ├── __init__.py
+│   ├── data_loader.py      # Multi-source data loading
+│   ├── visualizer.py       # Chart generation (matplotlib)
+│   ├── ppt_generator.py    # PowerPoint creation
+│   ├── pdf_exporter.py     # PDF report generation
+│   ├── email_sender.py     # Email delivery
+│   ├── scheduler.py        # Scheduling utilities
+│   └── config_loader.py    # Configuration management
 │
 ├── sample_data/            # Sample data files
 │   └── sales_data.json
 │
-├── output/                 # Generated reports
-│   ├── charts/
-│   ├── presentations/
-│   └── pdf/
-│
-├── requirements.txt
-└── README.md
+└── output/                 # Generated reports
+    ├── charts/
+    ├── presentations/
+    └── pdf/
 ```
 
 ---

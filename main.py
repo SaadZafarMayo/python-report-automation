@@ -25,17 +25,17 @@ import pandas as pd
 from datetime import datetime
 
 # Local module imports
-from data_loader import load_data, get_summary_stats
-from visualizer import create_bar_chart, create_line_chart, create_pie_chart
-from ppt_generator import (
+from src.data_loader import load_data, get_summary_stats
+from src.visualizer import create_bar_chart, create_line_chart, create_pie_chart
+from src.ppt_generator import (
     create_presentation,
     add_chart_slide,
     add_summary_slide,
     save_presentation
 )
-from pdf_exporter import create_pdf_report
-from email_sender import send_report_email, create_report_email_body
-from config_loader import load_config
+from src.pdf_exporter import create_pdf_report
+from src.email_sender import send_report_email, create_report_email_body
+from src.config_loader import load_config
 
 
 def auto_detect_columns(df: pd.DataFrame) -> dict:

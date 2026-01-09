@@ -26,8 +26,8 @@ Author: Data Analytics Team
 License: MIT
 """
 
-from scheduler import schedule_daily, schedule_weekly, schedule_interval, run_scheduler
-from config_loader import load_config
+from src.scheduler import schedule_daily, schedule_weekly, schedule_interval, run_scheduler
+from src.config_loader import load_config
 from main import generate_report
 
 
